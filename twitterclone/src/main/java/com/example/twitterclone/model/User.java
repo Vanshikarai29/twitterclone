@@ -1,4 +1,5 @@
 package com.example.twitterclone.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user",cascade=CascadeType.ALL)
+    @JsonBackReference
     private List <Tweet> tweets;
 
 }

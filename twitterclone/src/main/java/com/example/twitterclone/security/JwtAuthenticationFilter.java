@@ -30,6 +30,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain)
             throws ServletException, IOException {
+        System.out.println("JwtAuthenticationFilter triggered for: " + request.getRequestURI());//checker
+
 
         // ✅ Skip JWT check for authentication endpoints
         if (request.getServletPath().startsWith("/auth") ) {
@@ -44,7 +46,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             jwtToken = authHeader.substring(7);
             username = jwtUtil.extractUsername(jwtToken);
+
+            System.out.println("JWT: " + jwtToken);
+            System.out.println("Username: " + username);
         }
+
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
@@ -57,7 +63,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }
         }
-
+        System.out.println("Authentication in context: " + SecurityContextHolder.getContext().getAuthentication());// for checking**
         filterChain.doFilter(request, response);
     }
 }
