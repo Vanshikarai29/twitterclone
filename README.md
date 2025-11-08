@@ -1,9 +1,11 @@
 Twitter Clone
 
->>Project Overview
+Project Overview
+
 This project is a full-stack web application that replicates key functionalities of Twitter, developed using Spring Boot for the backend, and HTML/CSS/JavaScript for the frontend. It features user authentication with JWT, posting tweets, liking/disliking tweets, replying, editing tweets, and profile management.
 
->>Features
+Features
+
 1.User Authentication: Users can sign up, log in, and log out securely using JWT tokens.
 
 2.Tweet Management: Users can create, edit, delete, reply to tweets.
@@ -20,7 +22,8 @@ This project is a full-stack web application that replicates key functionalities
 
 8.Responsive Design: The frontend UI mimics Twitter's look and is responsive.
 
->>Technology Stack
+Technology Stack
+
 1.Backend: Spring Boot, Spring Security, JWT, MySQL, JPA/Hibernate
 
 2.Frontend: HTML5, CSS3, JavaScript (Vanilla)
@@ -29,7 +32,8 @@ This project is a full-stack web application that replicates key functionalities
 
 4.Version Control: Git and GitHub
 
->>How to Run
+How to Run
+
 1.Clone the repo.
 
 2.Configure MySQL database and update application.properties.
@@ -40,11 +44,13 @@ This project is a full-stack web application that replicates key functionalities
 
 5.Open frontend in a browser and start using the application.
 
->>Deployment
+Deployment
+
 The backend jar file can be deployed on any Java-supported server or cloud services like AWS, Heroku, or DigitalOcean.
 The frontend can be served from static hosting services such as Netlify or from backend server itself if integrated.
 
 Future Scope
+
 1.Implementing direct messaging between users.
 
 2.Real-time tweet notifications with WebSocket.
